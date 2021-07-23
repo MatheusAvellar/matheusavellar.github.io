@@ -13,6 +13,12 @@ h1,h2,.label {
     font-family: "Inter var", sans-serif;
   }
 }
+::selection {
+  background-color: #f0d342;
+}
+::-moz-selection {
+  background-color: #f0d342;
+}
 
 body {
   margin: 0;
@@ -136,6 +142,34 @@ article + article {
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+.clip {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+.preview summary {
+  list-style: none;
+}
+.preview summary > p::after {
+  content: " Preview (clique para abrir)";
+}
+.preview[open] summary > p::after {
+  content: " Preview (clique para fechar)";
+}
+.preview > article {
+  text-align: center;
+}
+.preview > article img {
+  transform: rotate(-2deg);
+  padding: 1rem;
+  width: 50%;
+  max-width: 175px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 #ececec;
+  pointer-events: none;
+}
+
 footer .label {
   font-size: .85rem;
   font-weight: 500;
