@@ -1,0 +1,142 @@
+@import url("https://rsms.me/inter/inter.css");
+@font-face {
+  font-family: "TT2020";
+  src: url("TT2020StyleE-Regular.woff2") format("woff2");
+}
+h1,h2,.label {
+  font-family: "Inter", sans-serif;
+  color: #111;
+}
+@supports (font-variation-settings: normal) {
+  h1,h2,
+  .label {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "TT2020", sans-serif;
+  color: #0d2390;
+  background-color: #f8f8f8;
+  min-width: 300px;
+}
+header,main,footer {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+header {
+  border-bottom: 3px solid #111;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+footer {
+  border-top: 3px solid #111;
+  margin: 1rem auto;
+  text-align: right;
+}
+#logo {
+  background-image: url(./logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+h1 {
+  margin: 0;
+}
+h1, strong {
+  font-weight: 500;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: .25rem 0;
+}
+p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+section {
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+a[href] {
+  color: inherit;
+  text-decoration: none;
+}
+.description a[href] {
+  font-weight: bold;
+}
+#experiments > article {
+  padding: 0.5rem 1rem 1rem;
+  -webkit-box-shadow: 5px 5px 10px 0 #ececec;
+  -moz-box-shadow: 5px 5px 10px 0 #ececec;
+  box-shadow: 5px 5px 10px 0 #ececec;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+}
+#experiments > article::before,
+#experiments > article::after {
+  content: "";
+  height: 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* [Ref] codepen.io/pen/dYBRYw */
+  -webkit-clip-path: polygon(0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 85% 100%, 90% 0%, 95% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 85% 100%, 90% 0%, 95% 100%, 100% 0%);
+}
+#experiments > article::before {
+  background-color: #fff;
+  top: 0;
+}
+#experiments > article::after {
+  background-color: #fff;
+  bottom: -5px;
+}
+article + article {
+  margin-top: 1rem;
+}
+@supports(display: grid) {
+  @media screen and (min-width: 700px) {
+    #experiments {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1rem;
+    }
+    article + article {
+      margin-top: 0;
+    }
+  }
+}
+.description {
+  background: repeating-linear-gradient(0, #000, #000 1px, transparent 1px, transparent 1.5rem);
+  line-height: 1.5rem;
+}
+.description::before {
+  content: "Descrição: ";
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Inter var", "Inter", sans-serif;
+  color: #111;
+  border-bottom: 3px solid #fff;
+}
+.links {
+  margin-top: 1rem;
+}
+.icon {
+  fill: #111;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+footer .label {
+  font-size: .85rem;
+  font-weight: 500;
+}
