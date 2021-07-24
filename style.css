@@ -119,6 +119,14 @@ article + article {
       margin-top: 0;
     }
   }
+  @media screen and (min-width: 1500px) {
+    header,main,footer { max-width: 1200px; }
+    #experiments { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  @media screen and (min-width: 2000px) {
+    header,main,footer { max-width: 1600px; }
+    #experiments { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  }
 }
 .description {
   background: repeating-linear-gradient(0, #000, #000 1px, transparent 1px, transparent 1.5rem);
