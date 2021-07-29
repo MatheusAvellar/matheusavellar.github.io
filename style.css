@@ -20,11 +20,16 @@ h1,h2,.label {
   background-color: #f0d342;
 }
 
+html {
+  /* Textura derivada de @solbiegler: twitter.com/i/status/1171876742614724610 */
+  background-image: url(./tx.png);
+  background-size: 250px;
+  background-color: #f8f8f8;
+}
 body {
   margin: 0;
   font-family: "TT2020", sans-serif;
   color: #0d2390;
-  background-color: #f8f8f8;
   min-width: 300px;
 }
 header,main,footer {
