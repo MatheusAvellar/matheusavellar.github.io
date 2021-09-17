@@ -1,15 +1,10 @@
 @import url("https://rsms.me/inter/inter.css");
-@font-face {
-  font-family: "TT2020";
-  src: url("TT2020StyleE-Regular.woff2") format("woff2");
-}
-h1,h2,.label {
+html {
   font-family: "Inter", sans-serif;
   color: #111;
 }
 @supports (font-variation-settings: normal) {
-  h1,h2,
-  .label {
+  html {
     font-family: "Inter var", sans-serif;
   }
 }
@@ -28,8 +23,6 @@ html {
 }
 body {
   margin: 0;
-  font-family: "TT2020", sans-serif;
-  color: #0d2390;
   min-width: 300px;
 }
 header,main,footer {
@@ -57,33 +50,51 @@ footer {
   margin: auto;
 }
 h1 {
-  margin: 0;
+  margin: 0 0 .5em;
 }
 h1, strong {
   font-weight: 500;
 }
 h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #656876;
+  margin: 0 0 .5em;
+}
+h3 {
   font-size: 1.5rem;
-  font-weight: bold;
   margin: .25rem 0;
+}
+h2, h3 {
+  font-weight: bold;
 }
 p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
+}
+hr {
+  height: 2.5px;
+  background-color: #111;
+  border: 0;
+  margin: 4rem auto 3rem;
+  width: 50%;
 }
 section {
   margin-bottom: 2rem;
   box-sizing: border-box;
 }
 a[href] {
-  color: inherit;
+  color: #0d2390;
   text-decoration: none;
+}
+a[href]:hover, a[href]:focus {
+  text-decoration: underline;
 }
 .description a[href] {
   font-weight: bold;
 }
-#experiments > article {
-  padding: 0.5rem 1rem 1rem;
+section > article {
+  padding: 1rem 1.5rem 1.5rem;
   -webkit-box-shadow: 5px 5px 10px 0 #ececec;
   -moz-box-shadow: 5px 5px 10px 0 #ececec;
   box-shadow: 5px 5px 10px 0 #ececec;
@@ -91,8 +102,7 @@ a[href] {
   background-color: #fff;
   position: relative;
 }
-#experiments > article::before,
-#experiments > article::after {
+section > article::after {
   content: "";
   height: 5px;
   position: absolute;
@@ -102,23 +112,19 @@ a[href] {
   -webkit-clip-path: polygon(0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 85% 100%, 90% 0%, 95% 100%, 100% 0%);
   clip-path: polygon(0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 85% 100%, 90% 0%, 95% 100%, 100% 0%);
 }
-#experiments > article::before {
-  background-color: #fff;
-  top: 0;
-}
-#experiments > article::after {
+section > article::after {
   background-color: #fff;
   bottom: -5px;
 }
 article + article {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 @supports(display: grid) {
   @media screen and (min-width: 700px) {
-    #experiments {
+    section {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem 1rem;
+      gap: 2.5rem 2rem;
     }
     article + article {
       margin-top: 0;
@@ -126,27 +132,23 @@ article + article {
   }
   @media screen and (min-width: 1500px) {
     header,main,footer { max-width: 1200px; }
-    #experiments { grid-template-columns: 1fr 1fr 1fr; }
+    section { grid-template-columns: 1fr 1fr 1fr; }
   }
   @media screen and (min-width: 2000px) {
     header,main,footer { max-width: 1600px; }
-    #experiments { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    section { grid-template-columns: 1fr 1fr 1fr 1fr; }
   }
-}
-.description {
-  background: repeating-linear-gradient(0, #000, #000 1px, transparent 1px, transparent 1.5rem);
-  line-height: 1.5rem;
-}
-.description::before {
-  content: "Descrição: ";
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: "Inter var", "Inter", sans-serif;
-  color: #111;
-  border-bottom: 3px solid #fff;
 }
 .links {
   margin-top: 1rem;
+}
+.links > p {
+  margin-bottom: .25rem;
+}
+.links a[href^="http://github.com"]::before,
+.links a[href^="https://github.com"]::before {
+  content: "GitHub";
+  font: inherit;
 }
 .icon {
   fill: #111;
@@ -161,29 +163,25 @@ article + article {
   height: 24px;
   vertical-align: middle;
 }
-.preview summary {
-  list-style: none;
-}
-.preview summary > p::after {
-  content: " Preview (clique para abrir)";
-}
-.preview[open] summary > p::after {
-  content: " Preview (clique para fechar)";
-}
-.preview > article {
-  text-align: center;
-}
-.preview > article img {
-  transform: rotate(-2deg);
-  padding: 1rem;
-  width: 50%;
-  max-width: 175px;
-  background-color: #fff;
-  box-shadow: 0 2px 2px 0 #ececec;
-  pointer-events: none;
-}
 
 footer .label {
   font-size: .85rem;
   font-weight: 500;
+}
+
+#splash {
+  position: relative;
+}
+#splash::after {
+  content: "";
+  position: absolute;
+  background-image: url(./splash.png);
+  height: 200px;
+  width: 200px;
+  right: 0;
+  transform: translate(1em, -2em);
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
