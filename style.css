@@ -151,9 +151,10 @@ article + article {
   font: inherit;
 }
 .icon {
-  fill: #111;
+  fill: #777;
   height: 24px;
   width: 24px;
+  transform: scale(.75);
   vertical-align: middle;
   box-sizing: border-box;
 }
