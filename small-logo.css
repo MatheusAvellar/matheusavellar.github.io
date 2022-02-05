@@ -23,3 +23,10 @@ figure#logo > a[href] {
   background-position: center;
   margin: auto;
 }
+figure#logo > a[href]:hover,
+figure#logo > a[href]:active,
+figure#logo > a[href]:focus,
+figure#logo > a[href]:focus-within {
+  background: unset;
+  opacity: unset;
+}
